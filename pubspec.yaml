@@ -1,7 +1,8 @@
 name: scrollable_titled_image_cards
 description: "A Flutter package for scrolling image cards with custom card overlays."
 version: 0.0.1
-homepage:
+homepage: "https://github.com/midnight-baker/scrollable_titled_image_cards"
+maintainer: "Ambar Castillo (@midnight-baker)"
 
 environment:
   sdk: '>=3.3.4 <4.0.0'
@@ -15,6 +16,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

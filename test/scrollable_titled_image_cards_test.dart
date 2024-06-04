@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:scrollable_titled_image_cards/scrollable_titled_image_cards.dart';
-import 'package:scrollable_titled_image_cards/src/scrollable_titled_image_cards.dart';
 
 
 void main() {
   const images = [
-    'assets/images/colosseum.jpg',
-    'assets/images/florence.jpg',
+    'example/assets/images/colosseum.jpg',
+    'example/assets/images/florence.jpg',
   ];
 
   group('ScrollableTitledImageCards widget tests', () {
