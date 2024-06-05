@@ -102,12 +102,15 @@ ScrollableTitledImageCards(
 | onTap (Optional)                                      | 	A callback function that is triggered when a card is tapped. The function receives the index of the tapped card as a parameter.  |
 
 ### Overlay Options:
-| Overlay | Description                                                                                                                |
-|---------|----------------------------------------------------------------------------------------------------------------------------|
-| TitleOverlay | Customizable widget for displaying a title with specific styles over a semi-transparent background overlay.                |
-| TitleSubtitleOverlay | Customizable widget that displays a title and subtitle with specific styles over a semi-transparent background overlay.    |
-| TitleDescriptionOverlay | Customizable widget that displays a title and description with specific styles over a semi-transparent background overlay. |
-| DescriptionOverlay | Customizable widget that displays a description with specific styles over a semi-transparent background overlay.           |
-| ClickableOverlay | A stateful widget that toggles the visibility of an overlay containing a description text when tapped.                     |
-
+| Overlay                                  | Description                                                                                                                           |
+|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| TitleOverlay                             | Customizable widget for displaying a title with specific styles over a semi-transparent background overlay.                           |
+| TitleSubtitleOverlay                     | Customizable widget that displays a title and subtitle with specific styles over a semi-transparent background overlay.               |
+| TitleSubtitleDescriptionOverlay          | Customizable widget that displays a title, subtitle, and description with specific styles over a semi-transparent background overlay. |
+| TitleDescriptionOverlay                  | Customizable widget that displays a title and description with specific styles over a semi-transparent background overlay.            |
+| DescriptionOverlay                       | Customizable widget that displays a description with specific styles over a semi-transparent background overlay.                      |
+| ClickableDescriptionOverlay              | A stateful widget that toggles the visibility of an overlay containing a description text when tapped.                                |
+| ClickableTitleDescriptionOverlay         | A stateful widget that toggles the visibility of an overlay containing a title and description text when tapped.                      |
+| ClickableTitleSubtitleOverlay            | A stateful widget that toggles the visibility of an overlay containing a title and subtitle text when tapped.                         |
+| ClickableTitleSubtitleDescriptionOverlay | A stateful widget that toggles the visibility of an overlay containing a title, subtitle, and description when tapped.                |
 
