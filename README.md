@@ -12,8 +12,8 @@ and the Flutter guide for
 -->
 
 
-# <div style="text-align: center">Scrollable Titled Image Cards </div>
-<div style="text-align: center">A Flutter package for scrolling image and custom card overlays. </div>
+# Scrollable Titled Image Cards  
+A Flutter package for scrolling image and custom card overlays. 
 
 ## Getting started
 1. Add this to your package's pubspec.yaml file:
@@ -89,10 +89,22 @@ ScrollableTitledImageCards(
 
 
 ## Classes and Parameters
-Class: ListItem  
-| Parameter | Description |
+### Class: ScrollableTitledImageCards
+| **Parameter**                                             | 	**Description**                                                                                                                      |
+|-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| **imagesList (Required)**                                 | 	A list of strings representing image paths or URLs for the cards.                                                                |
+| scrollDirection (Optional, defaults to Axis.vertical) |  The scrolling direction of the cards. Can be either Axis.horizontal or Axis.vertical.                                            |
+| width (Optional)                                      | 	The width of each card.                                                                                                          |
+| height (Optional)                                     | 	The height of each card.                                                                                                         |
+| margin (Optional)                                     | 	The margin applied to each card.                                                                                                 |
+| borderRadius (Optional)                               | 	The border radius applied to each card.                                                                                          |
+| overlays (Optional)                                   | 	A list of widgets to be displayed as overlays on top of the images. The length of this list must match the length of imagesList. |
+| onTap (Optional)                                      | 	A callback function that is triggered when a card is tapped. The function receives the index of the tapped card as a parameter.  |
+
+### Class: ListItem  
+| **Parameter** | **Description** |
 |-----|-----|
-| index (required) | The index of the ListItem in the list. |
+| **index (required)** | The index of the ListItem in the list. |
 | scrollDirection (optional, defaults to Axis.vertical) |	The scrolling direction of the list where this ListItem is used (vertical or horizontal). |
 | width (optional) |	The width of the ListItem. If not specified, it defaults to 400 for vertical lists and 200 for horizontal lists. |
 | height (optional) |	The height of the ListItem. If not specified, it defaults to 200 for vertical lists and 400 for horizontal lists. |
@@ -102,4 +114,8 @@ Class: ListItem
 | overlay (required) |	The widget that is displayed on top of the background image. This allows you to customize the content displayed within the ListItem. |
 | img (required) |	The path to the image used as the background for the ListItem. This can be a URL for a network image or a path to a local asset. |
 
+### Class: TitleSubtitleOverlay
+
+
+### Class: TitleOverlay
 
