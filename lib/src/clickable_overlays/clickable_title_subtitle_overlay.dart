@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
-import 'description_overlay.dart';
-
+import 'package:scrollable_titled_image_cards/src/overlays/title_subtitle_overlay.dart';
 
 
-class ClickableOverlay extends StatefulWidget{
-  final List<String> descriptionsList;
+
+class ClickableTitleSubtitleOverlay extends StatefulWidget{
+  final List<String> titlesList;
+  final List<String> subtitlesList;
   final List<String> imagesList;
   final Axis scrollDirection;
   final MainAxisAlignment alignment;
@@ -17,8 +17,9 @@ class ClickableOverlay extends StatefulWidget{
   final List<bool> isOverlayVisible;
   final int i;
 
-  const ClickableOverlay({
-    required this.descriptionsList,
+  const ClickableTitleSubtitleOverlay({
+    required this.titlesList,
+    required this.subtitlesList,
     required this.imagesList,
     required this.scrollDirection,
     this.alignment = MainAxisAlignment.end,
@@ -33,11 +34,11 @@ class ClickableOverlay extends StatefulWidget{
   });
 
   @override
-  State<StatefulWidget> createState() => _ClickableOverlay();
+  State<StatefulWidget> createState() => _ClickableTitleSubtitleOverlay();
 }
 
 
-class _ClickableOverlay extends State<ClickableOverlay>{
+class _ClickableTitleSubtitleOverlay extends State<ClickableTitleSubtitleOverlay>{
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -53,8 +54,9 @@ class _ClickableOverlay extends State<ClickableOverlay>{
           child: AnimatedOpacity(
             opacity: widget.isOverlayVisible[widget.i] ? 1.0 : 0.0,
             duration: const Duration(milliseconds: 300),
-            child: DescriptionOverlay(
-              description: widget.descriptionsList[widget.i],
+            child: TitleSubtitleOverlay(
+              title: widget.titlesList[widget.i],
+              subtitle: widget.subtitlesList[widget.i],
               font: widget.font,
               alignment: widget.alignment,
               opacity: widget.opacity,
@@ -67,23 +69,3 @@ class _ClickableOverlay extends State<ClickableOverlay>{
     );
   }
 }
-
-/*Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                    color: Colors.black.withOpacity(0.3),
-                    constraints: const BoxConstraints.expand(),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SelectableText(
-                          valuesDescription[i],
-                          style: const TextStyle(
-                              fontSize: 10,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold
-                          ),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ],
-                    ),
-                  ),*/

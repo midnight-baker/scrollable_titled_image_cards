@@ -90,10 +90,10 @@ ScrollableTitledImageCards(
 
 ## Classes, Parameters, and Overlay Options
 ### Class: ScrollableTitledImageCards
-| **Parameter**                                             | 	**Description**                                                                                                                      |
+| **Parameter**                                         | 	**Description**                                                                                                                  |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| **imagesList (Required)**                                 | 	A list of strings representing image paths or URLs for the cards.                                                                |
-| scrollDirection (Optional, defaults to Axis.vertical) |  The scrolling direction of the cards. Can be either Axis.horizontal or Axis.vertical.                                            |
+| **imagesList (Required)**                             | 	A list of strings representing image paths or URLs for the cards.                                                                |
+| scrollDirection (Optional, defaults to Axis.vertical) | The scrolling direction of the cards. Can be either Axis.horizontal or Axis.vertical.                                             |
 | width (Optional)                                      | 	The width of each card.                                                                                                          |
 | height (Optional)                                     | 	The height of each card.                                                                                                         |
 | margin (Optional)                                     | 	The margin applied to each card.                                                                                                 |
@@ -102,12 +102,12 @@ ScrollableTitledImageCards(
 | onTap (Optional)                                      | 	A callback function that is triggered when a card is tapped. The function receives the index of the tapped card as a parameter.  |
 
 ### Overlay Options:
-| Overlay | Description |
-|---------|-------------|
-| TitleOverlay |             |
-| TitleSubtitleOverlay |             |
-| TitleDescriptionOverlay |             |
-| DescriptionOverlay |             |
-| ClickableOverlay |             |
+| Overlay | Description                                                                                                                |
+|---------|----------------------------------------------------------------------------------------------------------------------------|
+| TitleOverlay | Customizable widget for displaying a title with specific styles over a semi-transparent background overlay.                |
+| TitleSubtitleOverlay | Customizable widget that displays a title and subtitle with specific styles over a semi-transparent background overlay.    |
+| TitleDescriptionOverlay | Customizable widget that displays a title and description with specific styles over a semi-transparent background overlay. |
+| DescriptionOverlay | Customizable widget that displays a description with specific styles over a semi-transparent background overlay.           |
+| ClickableOverlay | A stateful widget that toggles the visibility of an overlay containing a description text when tapped.                     |
 
 

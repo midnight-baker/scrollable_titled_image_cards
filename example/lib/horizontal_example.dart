@@ -3,11 +3,15 @@ import 'dart:developer';
 import 'package:example/vertical_example.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_titled_image_cards/scrollable_titled_image_cards.dart';
-import 'package:scrollable_titled_image_cards/src/title_description_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/title_subtitle_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/clickable_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/title_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/overlays/title_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/overlays/title_subtitle_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/overlays/title_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/overlays/description_overlay.dart';
+
+import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_title_subtitle_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_title_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_title_subtitle_overlay.dart';
 
 import 'constants.dart';
 
@@ -126,7 +130,7 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                   log('$index pressed');
                 },
                 overlays: [
-                  for (int i = 0; i < titlesList.length; i++)
+                  for (int i = 0; i < descriptionsList.length; i++)
                   // this will be a stack element on top of the image - customize however you want
                     DescriptionOverlay(
                       description: descriptionsList[i],
@@ -136,6 +140,7 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 ],
               ),
 
+              const SelectableText('ScrollableTitledImageCards with ClickableDescriptionOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
               // image card -- variable colored and appearing overlay and description text -- MainAxisAlignment.end (default)
               ScrollableTitledImageCards(
                 imagesList: imagesList,
@@ -149,7 +154,83 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 },
                 overlays: [
                   for (int i = 0; i < descriptionsList.length; i++)
-                    ClickableOverlay(
+                    ClickableDescriptionOverlay(
+                      descriptionsList: descriptionsList,
+                      imagesList: imagesList,
+                      scrollDirection: Axis.horizontal,
+                      isOverlayVisible: _isOverlayVisible,
+                      i: i,
+                    ),
+                ],
+              ),
+
+              const SelectableText('ScrollableTitledImageCards with ClickableTitleDescriptionOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              // image card -- variable colored and appearing overlay, title, and description -- MainAxisAlignment.end (default)
+              ScrollableTitledImageCards(
+                imagesList: imagesList,
+                scrollDirection: Axis.horizontal,
+                width: 250,
+                height: 350,
+                onTap: (index){
+                  setState(() {
+                    _isOverlayVisible[index] = !_isOverlayVisible[index];
+                  });
+                },
+                overlays: [
+                  for (int i = 0; i < titlesList.length; i++)
+                    ClickableTitleDescriptionOverlay(
+                      titlesList: titlesList,
+                      descriptionsList: descriptionsList,
+                      imagesList: imagesList,
+                      scrollDirection: Axis.horizontal,
+                      isOverlayVisible: _isOverlayVisible,
+                      i: i,
+                    ),
+                ],
+              ),
+
+              const SelectableText('ScrollableTitledImageCards with ClickableTitleSubtitleOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              // image card -- variable colored and appearing overlay, title, and subtitle -- MainAxisAlignment.end (default)
+              ScrollableTitledImageCards(
+                imagesList: imagesList,
+                scrollDirection: Axis.horizontal,
+                width: 250,
+                height: 350,
+                onTap: (index){
+                  setState(() {
+                    _isOverlayVisible[index] = !_isOverlayVisible[index];
+                  });
+                },
+                overlays: [
+                  for (int i = 0; i < titlesList.length; i++)
+                    ClickableTitleSubtitleOverlay(
+                      titlesList: titlesList,
+                      subtitlesList: subtitlesList,
+                      imagesList: imagesList,
+                      scrollDirection: Axis.horizontal,
+                      isOverlayVisible: _isOverlayVisible,
+                      i: i,
+                    ),
+                ],
+              ),
+
+              const SelectableText('ScrollableTitledImageCards with ClickableTitleSubtitleDescriptionOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              // image card -- variable colored and appearing overlay, title, subtitle, and description -- MainAxisAlignment.end (default)
+              ScrollableTitledImageCards(
+                imagesList: imagesList,
+                scrollDirection: Axis.horizontal,
+                width: 250,
+                height: 350,
+                onTap: (index){
+                  setState(() {
+                    _isOverlayVisible[index] = !_isOverlayVisible[index];
+                  });
+                },
+                overlays: [
+                  for (int i = 0; i < titlesList.length; i++)
+                    ClickableTitleSubtitleDescriptionOverlay(
+                      titlesList: titlesList,
+                      subtitlesList: subtitlesList,
                       descriptionsList: descriptionsList,
                       imagesList: imagesList,
                       scrollDirection: Axis.horizontal,
