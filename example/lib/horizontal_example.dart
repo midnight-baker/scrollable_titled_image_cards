@@ -11,12 +11,16 @@ import 'package:scrollable_titled_image_cards/src/description_overlay.dart';
 
 import 'constants.dart';
 
+
+
 class HorizontalExample extends StatefulWidget {
   const HorizontalExample({super.key});
 
   @override
   State<HorizontalExample> createState() => _HorizontalExampleState();
 }
+
+
 
 class _HorizontalExampleState extends State<HorizontalExample> {
   late List<bool> _isOverlayVisible;

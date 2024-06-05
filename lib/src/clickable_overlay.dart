@@ -38,7 +38,6 @@ class ClickableOverlay extends StatefulWidget{
 
 
 class _ClickableOverlay extends State<ClickableOverlay>{
-
   @override
   Widget build(BuildContext context) {
     return Stack(
