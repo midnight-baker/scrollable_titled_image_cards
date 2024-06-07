@@ -3,15 +3,10 @@ import 'package:scrollable_titled_image_cards/scrollable_titled_image_cards.dart
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_subtitle_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_subtitle_description_overlay.dart';
 
-import 'package:scrollable_titled_image_cards/src/gradient_clickable_overlays/gradient_clickable_description_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/gradient_clickable_overlays/gradient_clickable_title_subtitle_description_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/gradient_clickable_overlays/gradient_clickable_title_description_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/gradient_clickable_overlays/gradient_clickable_title_subtitle_overlay.dart';
 
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_description_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_subtitle_description_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_description_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_subtitle_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_overlay.dart';
 
 import 'constants.dart';

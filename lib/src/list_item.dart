@@ -11,7 +11,7 @@ class ListItem extends StatelessWidget {
   final Widget overlay;
   final String img;
 
-  ListItem({
+  const ListItem({
     required this.img,
     required this.overlay,
     required this.index,
