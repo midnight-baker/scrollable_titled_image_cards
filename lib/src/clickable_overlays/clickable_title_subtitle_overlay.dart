@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scrollable_titled_image_cards/src/overlays/title_subtitle_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/full_overlays/title_subtitle_overlay.dart';
 
 
 

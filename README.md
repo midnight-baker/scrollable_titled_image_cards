@@ -31,7 +31,8 @@ import 'package:scrollable_titled_image_cards/scrollable_titled_image_cards.dart
 ```
 
 ## Usage
-ParallaxCards is a Stateless Widget which you can include in your widget tree. You can use it either vertically or horizontally by overriding the scrollDirection property:
+ScrollableTitledImageCards is a Stateless Widget which you can include in your widget tree. You can use it either vertically or horizontally by overriding the scrollDirection property (scrollDirection = Axis.vertical by default).
+The clickable overlays within ScrollableTitledImageCards are Stateful Widgets. Check the examples and lib/src/clickable_overlays for the specifics on clickable overlays and how to customize them.
 
 ### Horizontal scroll view
 ```
@@ -54,7 +55,7 @@ ScrollableTitledImageCards(
   },
   overlays: [
     for (var title in titlesList)
-      // this will be a stack element on top of the image - customize however you want
+      // this will be a stack element on top of the image - customize however you want or use one of the overlays or clickable overlays available
       Container(
         color: Colors.black.withOpacity(0.6),
         constraints: const BoxConstraints.expand(),

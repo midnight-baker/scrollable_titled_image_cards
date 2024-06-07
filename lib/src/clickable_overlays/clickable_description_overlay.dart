@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../overlays/description_overlay.dart';
+import '../full_overlays/description_overlay.dart';
 
 
 
 class ClickableDescriptionOverlay extends StatefulWidget{
   final List<String> descriptionsList;
-  final List<String> imagesList;
   final Axis scrollDirection;
   final MainAxisAlignment alignment;
   final double defaultPadding;
@@ -19,7 +18,6 @@ class ClickableDescriptionOverlay extends StatefulWidget{
 
   const ClickableDescriptionOverlay({
     required this.descriptionsList,
-    required this.imagesList,
     required this.scrollDirection,
     this.alignment = MainAxisAlignment.end,
     this.overlayColorHex = 0xFF000000,

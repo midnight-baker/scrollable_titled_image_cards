@@ -3,15 +3,25 @@ import 'dart:developer';
 import 'package:example/vertical_example.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_titled_image_cards/scrollable_titled_image_cards.dart';
-import 'package:scrollable_titled_image_cards/src/overlays/title_description_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/overlays/title_subtitle_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/overlays/title_overlay.dart';
-import 'package:scrollable_titled_image_cards/src/overlays/description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/full_overlays/title_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/full_overlays/title_subtitle_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/full_overlays/title_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/full_overlays/description_overlay.dart';
 
 import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_description_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_title_subtitle_description_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_title_description_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_title_subtitle_overlay.dart';
+
+import 'package:scrollable_titled_image_cards/src/gradient_clickable_overlays/gradient_clickable_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/gradient_clickable_overlays/gradient_clickable_title_subtitle_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/gradient_clickable_overlays/gradient_clickable_title_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/gradient_clickable_overlays/gradient_clickable_title_subtitle_overlay.dart';
+
+import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_subtitle_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_description_overlay.dart';
+import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_subtitle_overlay.dart';
 
 import 'constants.dart';
 
@@ -156,7 +166,6 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                   for (int i = 0; i < descriptionsList.length; i++)
                     ClickableDescriptionOverlay(
                       descriptionsList: descriptionsList,
-                      imagesList: imagesList,
                       scrollDirection: Axis.horizontal,
                       isOverlayVisible: _isOverlayVisible,
                       i: i,
