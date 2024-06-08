@@ -46,8 +46,7 @@ class GradientDescriptionOverlay extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
-              mainAxisAlignment:
-                  MainAxisAlignment.end, // vertical position of text
+              mainAxisAlignment: MainAxisAlignment.end, // vertical position of text
               children: [
                 Align(
                   alignment: alignment, // horizontal position of text
@@ -56,10 +55,12 @@ class GradientDescriptionOverlay extends StatelessWidget {
                     style: TextStyle(
                         fontSize: descriptionSize,
                         color: Color(textColorHex),
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.bold
+                    ),
                   ),
                 ),
-              ]),
+              ]
+          ),
         ),
       ],
     );
