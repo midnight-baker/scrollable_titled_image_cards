@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+//TODO: check this works
+// __ gradient appears on click
+// __ gradient appears over entire image
+// __ text appears centered at bottom
+// __ text appears on click
 
 class GradientClickableTitleSubtitleOverlay extends StatefulWidget {
   final int textColorHex;
@@ -7,7 +12,7 @@ class GradientClickableTitleSubtitleOverlay extends StatefulWidget {
   final String title;
   final double? titleSize;
   final int overlayColorHex;
-  final Alignment alignment;
+  final MainAxisAlignment alignment;
   final double defaultPadding;
   final double opacity;
   final List<bool> isOverlayVisible;
@@ -16,7 +21,7 @@ class GradientClickableTitleSubtitleOverlay extends StatefulWidget {
   const GradientClickableTitleSubtitleOverlay({
     this.textColorHex = 0xFFFFFFFF,
     this.font = "Helvetica", // TODO: change default font
-    this.alignment = Alignment.bottomCenter, // Recommended options: .bottomCenter, .bottomLeft, and .bottomRight
+    this.alignment = MainAxisAlignment.end, // Recommended options: .bottomCenter, .bottomLeft, and .bottomRight
     this.defaultPadding = 10,
     this.opacity = 0.8,
     required this.title,
@@ -35,9 +40,59 @@ class _GradientClickableTitleSubtitleOverlay extends State<GradientClickableTitl
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.center,
+      alignment: Alignment.bottomCenter,
       children: [
-        GestureDetector(
+        Positioned.fill(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                widget.isOverlayVisible[widget.i] = !widget.isOverlayVisible[widget.i];
+              });
+            },
+            child: AnimatedOpacity(
+              opacity: widget.isOverlayVisible[widget.i] ? 1.0 : 0.0,
+              duration: const Duration(milliseconds: 300),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.transparent,
+                      Color(widget.overlayColorHex).withOpacity(widget.opacity)
+                    ],
+                    stops: const [0.5, 0.9],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                ),
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      mainAxisAlignment: widget.alignment,
+                      children: [
+                        SelectableText(
+                          widget.title,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: widget.titleSize,
+                            color: Color(widget.textColorHex),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/*GestureDetector(
           onTap: () {
             setState(() {
               widget.isOverlayVisible[widget.i] = !widget.isOverlayVisible[widget.i];
@@ -74,8 +129,4 @@ class _GradientClickableTitleSubtitleOverlay extends State<GradientClickableTitl
               ],
             ),
           ),
-        ),
-      ],
-    );
-  }
-}
+        ),*/

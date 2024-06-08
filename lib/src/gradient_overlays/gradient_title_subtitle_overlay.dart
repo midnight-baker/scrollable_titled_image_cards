@@ -50,19 +50,21 @@ class GradientTitleSubtitleOverlay extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.end, // vertical position of text
             children: [
               Align(
-                alignment: alignment,
+                alignment: alignment, // horizontal position of text
                 child: SelectableText(
                   title,
                   style: TextStyle(
                       fontSize: titleSize,
                       color: Color(textColorHex),
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
               Align(
-                alignment: alignment,
+                alignment: alignment, // horizontal position of text
                 child: SelectableText(
                   subtitle,
                   textAlign: TextAlign.center,

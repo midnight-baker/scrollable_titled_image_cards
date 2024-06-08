@@ -35,60 +35,63 @@ class GradientClickableTitleSubtitleOverlay extends StatefulWidget {
   State<StatefulWidget> createState() => _GradientClickableTitleSubtitleOverlay();
 }
 
-class _GradientClickableTitleSubtitleOverlay extends State<GradientClickableTitleSubtitleOverlay>{
+class _GradientClickableTitleSubtitleOverlay extends State<GradientClickableTitleSubtitleOverlay> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.center,
+      alignment: Alignment.bottomCenter,
       children: [
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              widget.isOverlayVisible[widget.i] = !widget.isOverlayVisible[widget.i];
-            });
-          },
-          child: AnimatedOpacity(
-            opacity: widget.isOverlayVisible[widget.i] ? 1.0 : 0.0,
-            duration: const Duration(milliseconds: 300),
-            child: Center(
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  Positioned.fill(
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.transparent,
-                            Color(widget.overlayColorHex).withOpacity(widget.opacity)
-                          ],
-                          stops: const [0.5, 0.9],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
+        Positioned.fill(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                widget.isOverlayVisible[widget.i] = !widget.isOverlayVisible[widget.i];
+              });
+            },
+            child: AnimatedOpacity(
+              opacity: widget.isOverlayVisible[widget.i] ? 1.0 : 0.0,
+              duration: const Duration(milliseconds: 300),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.transparent,
+                      Color(widget.overlayColorHex).withOpacity(widget.opacity)
+                    ],
+                    stops: const [0.5, 0.9],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                ),
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      mainAxisAlignment: widget.alignment,
+                      children: [
+                        SelectableText(
+                          widget.title,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: widget.titleSize,
+                            color: Color(widget.textColorHex),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
+                        SelectableText(
+                          widget.subtitle,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: widget.subtitleSize,
+                            color: Color(widget.textColorHex),
+                            fontStyle: FontStyle.italic,
+                            fontFamily: widget.font,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  SelectableText(
-                    widget.title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: widget.titleSize,
-                        color: Color(widget.textColorHex),
-                        fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  SelectableText(
-                    widget.subtitle,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: widget.subtitleSize,
-                      color: Color(widget.textColorHex),
-                      fontStyle: FontStyle.italic,
-                      fontFamily: widget.font,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),

@@ -7,7 +7,7 @@ class GradientTitleOverlay extends StatelessWidget{
   final String title;
   final int textColorHex;
   final String font;
-  final double fontSize;
+  final double titleSize;
   final int overlayColorHex;
   final Alignment alignment;
   final double defaultPadding;
@@ -15,7 +15,7 @@ class GradientTitleOverlay extends StatelessWidget{
 
   const GradientTitleOverlay({
     this.textColorHex = 0xFFFFFFFF,
-    this.fontSize = 24,
+    this.titleSize = 24,
     this.font = "Helvetica", // TODO: change default font
     this.alignment = Alignment.bottomCenter, // Recommended options: .bottomLeft, .bottomCenter, and .bottomRight
     this.defaultPadding = 10,
@@ -47,15 +47,20 @@ class GradientTitleOverlay extends StatelessWidget{
         ),
         Padding(
           padding: const EdgeInsets.all(10),
-          child: Align(
-            alignment: alignment,
-            child: SelectableText(
-              title,
-              style: TextStyle(
-                  fontSize: fontSize,
-                  color: Color(textColorHex),
-                  fontWeight: FontWeight.bold),
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Align(
+                alignment: alignment,
+                child: SelectableText(
+                  title,
+                  style: TextStyle(
+                      fontSize: titleSize,
+                      color: Color(textColorHex),
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
           ),
         ),
       ],

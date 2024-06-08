@@ -7,7 +7,7 @@ class GradientDescriptionOverlay extends StatelessWidget{
   final String description;
   final int textColorHex;
   final String font;
-  final double fontSize;
+  final double descriptionSize;
   final int overlayColorHex;
   final Alignment alignment;
   final double defaultPadding;
@@ -15,7 +15,7 @@ class GradientDescriptionOverlay extends StatelessWidget{
 
   const GradientDescriptionOverlay({
     this.textColorHex = 0xFFFFFFFF,
-    this.fontSize = 12,
+    this.descriptionSize = 12,
     this.font = "Helvetica", // TODO: change default font
     this.alignment = Alignment.bottomCenter, // Recommended options: .bottomLeft, .bottomCenter, and .bottomRight
     this.defaultPadding = 10,
@@ -47,12 +47,21 @@ class GradientDescriptionOverlay extends StatelessWidget{
         ),
         Padding(
           padding: const EdgeInsets.all(10),
-          child: SelectableText(
-            description,
-            style: TextStyle(
-                fontSize: fontSize,
-                color: Color(textColorHex),
-                fontWeight: FontWeight.bold),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.end, // vertical position of text
+              children: [
+                Align(
+                  alignment: alignment, // horizontal position of text
+                  child: SelectableText(
+                    description,
+                    style: TextStyle(
+                        fontSize: descriptionSize,
+                        color: Color(textColorHex),
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+              ]
           ),
         ),
       ],

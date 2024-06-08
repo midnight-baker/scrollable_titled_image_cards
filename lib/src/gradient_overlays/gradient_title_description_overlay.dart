@@ -6,9 +6,10 @@ import 'package:flutter/material.dart';
 class GradientTitleDescriptionOverlay extends StatelessWidget{
   final String title;
   final String description;
+  final double? titleSize;
+  final double? descriptionSize;
   final int textColorHex;
   final String font;
-  final double fontSize;
   final int overlayColorHex;
   final Alignment alignment;
   final double defaultPadding;
@@ -16,7 +17,8 @@ class GradientTitleDescriptionOverlay extends StatelessWidget{
 
   const GradientTitleDescriptionOverlay({
     this.textColorHex = 0xFFFFFFFF,
-    this.fontSize = 24,
+    this.titleSize = 24,
+    this.descriptionSize = 12,
     this.font = "Helvetica", // TODO: change default font
     this.alignment = Alignment.bottomCenter, // Recommended options: .bottomLeft, .bottomCenter, and .bottomRight
     this.defaultPadding = 10,
@@ -50,26 +52,29 @@ class GradientTitleDescriptionOverlay extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.end, // vertical position of text
             children: [
               Align(
-                alignment: alignment,
+                alignment: alignment, // horizontal position of text
                 child: SelectableText(
                   title,
                   style: TextStyle(
-                      fontSize: fontSize,
+                      fontSize: titleSize,
                       color: Color(textColorHex),
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
               Align(
-                alignment: alignment,
+                alignment: alignment, // horizontal position of text
                 child: SelectableText(
                   description,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
-                      fontSize: fontSize,
+                      fontSize: descriptionSize,
                       color: Color(textColorHex),
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
             ],
