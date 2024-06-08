@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-
-class TitleSubtitleDescriptionOverlay extends StatelessWidget{
+class TitleSubtitleDescriptionOverlay extends StatelessWidget {
   final int textColorHex;
   final String font;
   final String title;
@@ -19,7 +17,8 @@ class TitleSubtitleDescriptionOverlay extends StatelessWidget{
   const TitleSubtitleDescriptionOverlay({
     this.textColorHex = 0xFFFFFFFF,
     this.font = "Helvetica", // TODO: change default font
-    this.alignment = MainAxisAlignment.end, // Recommended options: .end, .start, and .center
+    this.alignment =
+        MainAxisAlignment.end, // Recommended options: .end, .start, and .center
     this.defaultPadding = 10,
     this.opacity = 0.6,
     required this.title,

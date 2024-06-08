@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-class GradientTitleSubtitleDescriptionOverlay extends StatelessWidget{
+class GradientTitleSubtitleDescriptionOverlay extends StatelessWidget {
   final int textColorHex;
   final String font;
   final String title;
@@ -18,7 +17,8 @@ class GradientTitleSubtitleDescriptionOverlay extends StatelessWidget{
   const GradientTitleSubtitleDescriptionOverlay({
     this.textColorHex = 0xFFFFFFFF,
     this.font = "Helvetica", // TODO: change default font
-    this.alignment = Alignment.bottomCenter, // Recommended options: .bottomCenter, .bottomLeft, and .bottomRight
+    this.alignment = Alignment
+        .bottomCenter, // Recommended options: .bottomCenter, .bottomLeft, and .bottomRight
     this.defaultPadding = 10,
     this.opacity = 0.8,
     required this.title,
@@ -54,7 +54,8 @@ class GradientTitleSubtitleDescriptionOverlay extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end, // vertical position of text
+            mainAxisAlignment:
+                MainAxisAlignment.end, // vertical position of text
             children: [
               Align(
                 alignment: alignment, // horizontal position of text
@@ -63,8 +64,7 @@ class GradientTitleSubtitleDescriptionOverlay extends StatelessWidget{
                   style: TextStyle(
                       fontSize: titleSize,
                       color: Color(textColorHex),
-                      fontWeight: FontWeight.bold
-                  ),
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               Align(

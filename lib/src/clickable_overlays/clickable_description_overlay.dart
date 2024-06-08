@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../full_overlays/description_overlay.dart';
 
-
-
-class ClickableDescriptionOverlay extends StatefulWidget{
+class ClickableDescriptionOverlay extends StatefulWidget {
   final List<String> descriptionsList;
   final Axis scrollDirection;
   final MainAxisAlignment alignment;
@@ -34,8 +32,7 @@ class ClickableDescriptionOverlay extends StatefulWidget{
   State<StatefulWidget> createState() => _ClickableDescriptionOverlay();
 }
 
-
-class _ClickableDescriptionOverlay extends State<ClickableDescriptionOverlay>{
+class _ClickableDescriptionOverlay extends State<ClickableDescriptionOverlay> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -45,7 +42,8 @@ class _ClickableDescriptionOverlay extends State<ClickableDescriptionOverlay>{
         GestureDetector(
           onTap: () {
             setState(() {
-              widget.isOverlayVisible[widget.i] = !widget.isOverlayVisible[widget.i];
+              widget.isOverlayVisible[widget.i] =
+                  !widget.isOverlayVisible[widget.i];
             });
           },
           child: AnimatedOpacity(

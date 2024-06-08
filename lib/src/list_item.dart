@@ -53,16 +53,16 @@ class ListItem extends StatelessWidget {
   Widget _buildStaticBackground(BuildContext context) {
     return (img.startsWith('http'))
         ? Image.network(
-      img,
-      fit: BoxFit.cover,
-      width: double.infinity,
-      height: double.infinity,
-    )
+            img,
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          )
         : Image.asset(
-      img,
-      fit: BoxFit.cover,
-      width: double.infinity,
-      height: double.infinity,
-    );
+            img,
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          );
   }
 }

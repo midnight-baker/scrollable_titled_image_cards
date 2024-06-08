@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-
-class TitleOverlay extends StatelessWidget{
+class TitleOverlay extends StatelessWidget {
   final String title;
   final int textColorHex;
   final String font;
@@ -16,7 +14,8 @@ class TitleOverlay extends StatelessWidget{
     this.textColorHex = 0xFFFFFFFF,
     this.fontSize = 24,
     this.font = "Helvetica", // TODO: change default font
-    this.alignment = MainAxisAlignment.center, // Recommended options: .end, .start, and .center
+    this.alignment = MainAxisAlignment
+        .center, // Recommended options: .end, .start, and .center
     this.defaultPadding = 10,
     this.opacity = 0.6,
     this.overlayColorHex = 0xFF000000,
@@ -35,8 +34,7 @@ class TitleOverlay extends StatelessWidget{
           style: TextStyle(
               fontSize: fontSize,
               color: Color(textColorHex),
-              fontWeight: FontWeight.bold
-          ),
+              fontWeight: FontWeight.bold),
         ),
       ),
     );

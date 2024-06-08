@@ -23,7 +23,8 @@ class GradientClickableTitleDescriptionOverlay extends StatefulWidget {
   const GradientClickableTitleDescriptionOverlay({
     this.textColorHex = 0xFFFFFFFF,
     this.font = "Helvetica", // TODO: change default font
-    this.alignment = MainAxisAlignment.end, // Recommended options: .bottomCenter, .bottomLeft, and .bottomRight
+    this.alignment = MainAxisAlignment
+        .end, // Recommended options: .bottomCenter, .bottomLeft, and .bottomRight
     this.defaultPadding = 10,
     this.opacity = 0.8,
     required this.title,
@@ -37,10 +38,12 @@ class GradientClickableTitleDescriptionOverlay extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() => _GradientClickableTitleDescriptionOverlay();
+  State<StatefulWidget> createState() =>
+      _GradientClickableTitleDescriptionOverlay();
 }
 
-class _GradientClickableTitleDescriptionOverlay extends State<GradientClickableTitleDescriptionOverlay>{
+class _GradientClickableTitleDescriptionOverlay
+    extends State<GradientClickableTitleDescriptionOverlay> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -50,7 +53,8 @@ class _GradientClickableTitleDescriptionOverlay extends State<GradientClickableT
           child: GestureDetector(
             onTap: () {
               setState(() {
-                widget.isOverlayVisible[widget.i] = !widget.isOverlayVisible[widget.i];
+                widget.isOverlayVisible[widget.i] =
+                    !widget.isOverlayVisible[widget.i];
               });
             },
             child: AnimatedOpacity(

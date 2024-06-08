@@ -3,7 +3,6 @@ import 'package:scrollable_titled_image_cards/scrollable_titled_image_cards.dart
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_subtitle_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_subtitle_description_overlay.dart';
 
-
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_description_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_description_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/gradient_overlays/gradient_title_overlay.dart';
@@ -36,14 +35,22 @@ class _VerticalExampleState extends State<VerticalExample> {
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Column(
               children: [
-                const SelectableText('ScrollableTitledImageCards WITHOUT overlay and sizedbox', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                const SelectableText(
+                  'ScrollableTitledImageCards WITHOUT overlay and sizedbox',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 const ScrollableTitledImageCards(
                   imagesList: imagesList,
                   width: double.infinity,
                   height: 190,
                 ),
 
-                const SelectableText('ScrollableTitledImageCards WITHOUT overlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                const SelectableText(
+                  'ScrollableTitledImageCards WITHOUT overlay',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.85,
                   child: const ScrollableTitledImageCards(
@@ -53,7 +60,11 @@ class _VerticalExampleState extends State<VerticalExample> {
                   ),
                 ),
 
-                const SelectableText('ScrollableTitledImageCards with GRADIENT title overlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                const SelectableText(
+                  'ScrollableTitledImageCards with GRADIENT title overlay',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 // vertical scrollable cards with title and gradient overlay
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.85,
@@ -77,7 +88,11 @@ class _VerticalExampleState extends State<VerticalExample> {
                   ),
                 ),
 
-                const SelectableText('ScrollableTitledImageCards with GRADIENT title & subtitle overlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                const SelectableText(
+                  'ScrollableTitledImageCards with GRADIENT title & subtitle overlay',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 // ++align center bottom! ++overlay works!
                 // vertical scrollable cards with title, subtitle, and gradient overlay
                 SizedBox(
@@ -102,7 +117,11 @@ class _VerticalExampleState extends State<VerticalExample> {
                   ),
                 ),
 
-                const SelectableText('ScrollableTitledImageCards with GRADIENT title, subtitle, description overlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                const SelectableText(
+                  'ScrollableTitledImageCards with GRADIENT title, subtitle, description overlay',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 // ++overlay works! ++align text center bottom!
                 // vertical scrollable cards with title, subtitle, description and gradient overlay
                 SizedBox(
@@ -128,7 +147,11 @@ class _VerticalExampleState extends State<VerticalExample> {
                   ),
                 ),
 
-                const SelectableText('ScrollableTitledImageCards with GRADIENT title & description overlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                const SelectableText(
+                  'ScrollableTitledImageCards with GRADIENT title & description overlay',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 // ++description text => 12.0. ++align text center bottom. ++gradient works
                 // vertical scrollable cards with title, description, and gradient overlay
                 SizedBox(
@@ -153,7 +176,11 @@ class _VerticalExampleState extends State<VerticalExample> {
                   ),
                 ),
 
-                const SelectableText('ScrollableTitledImageCards with GRADIENT description overlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                const SelectableText(
+                  'ScrollableTitledImageCards with GRADIENT description overlay',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 // ++gradient not on card. ++align center bottom
                 // vertical scrollable cards with description and gradient overlay
                 SizedBox(
@@ -177,7 +204,11 @@ class _VerticalExampleState extends State<VerticalExample> {
                   ),
                 ),
 
-                const SelectableText('ScrollableTitledImageCards with GRADIENT & CLICKABLE title & subtitle overlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                const SelectableText(
+                  'ScrollableTitledImageCards with GRADIENT & CLICKABLE title & subtitle overlay',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.85,
                   child: ScrollableTitledImageCards(

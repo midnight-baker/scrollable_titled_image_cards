@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-
-
-class GradientTitleDescriptionOverlay extends StatelessWidget{
+class GradientTitleDescriptionOverlay extends StatelessWidget {
   final String title;
   final String description;
   final double? titleSize;
@@ -20,7 +17,8 @@ class GradientTitleDescriptionOverlay extends StatelessWidget{
     this.titleSize = 24,
     this.descriptionSize = 12,
     this.font = "Helvetica", // TODO: change default font
-    this.alignment = Alignment.bottomCenter, // Recommended options: .bottomLeft, .bottomCenter, and .bottomRight
+    this.alignment = Alignment
+        .bottomCenter, // Recommended options: .bottomLeft, .bottomCenter, and .bottomRight
     this.defaultPadding = 10,
     this.opacity = 0.8,
     this.overlayColorHex = 0xFF000000,
@@ -52,7 +50,8 @@ class GradientTitleDescriptionOverlay extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end, // vertical position of text
+            mainAxisAlignment:
+                MainAxisAlignment.end, // vertical position of text
             children: [
               Align(
                 alignment: alignment, // horizontal position of text
@@ -61,8 +60,7 @@ class GradientTitleDescriptionOverlay extends StatelessWidget{
                   style: TextStyle(
                       fontSize: titleSize,
                       color: Color(textColorHex),
-                      fontWeight: FontWeight.bold
-                  ),
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               Align(
@@ -73,8 +71,7 @@ class GradientTitleDescriptionOverlay extends StatelessWidget{
                   style: TextStyle(
                       fontSize: descriptionSize,
                       color: Color(textColorHex),
-                      fontWeight: FontWeight.bold
-                  ),
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ],

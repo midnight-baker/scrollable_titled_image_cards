@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_titled_image_cards/src/full_overlays/title_subtitle_overlay.dart';
 
-
-
-class ClickableTitleSubtitleOverlay extends StatefulWidget{
+class ClickableTitleSubtitleOverlay extends StatefulWidget {
   final List<String> titlesList;
   final List<String> subtitlesList;
   final List<String> imagesList;
@@ -37,8 +35,8 @@ class ClickableTitleSubtitleOverlay extends StatefulWidget{
   State<StatefulWidget> createState() => _ClickableTitleSubtitleOverlay();
 }
 
-
-class _ClickableTitleSubtitleOverlay extends State<ClickableTitleSubtitleOverlay>{
+class _ClickableTitleSubtitleOverlay
+    extends State<ClickableTitleSubtitleOverlay> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -48,7 +46,8 @@ class _ClickableTitleSubtitleOverlay extends State<ClickableTitleSubtitleOverlay
         GestureDetector(
           onTap: () {
             setState(() {
-              widget.isOverlayVisible[widget.i] = !widget.isOverlayVisible[widget.i];
+              widget.isOverlayVisible[widget.i] =
+                  !widget.isOverlayVisible[widget.i];
             });
           },
           child: AnimatedOpacity(

@@ -13,11 +13,7 @@ import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_t
 import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_title_description_overlay.dart';
 import 'package:scrollable_titled_image_cards/src/clickable_overlays/clickable_title_subtitle_overlay.dart';
 
-
-
 import 'constants.dart';
-
-
 
 class HorizontalExample extends StatefulWidget {
   const HorizontalExample({super.key});
@@ -25,8 +21,6 @@ class HorizontalExample extends StatefulWidget {
   @override
   State<HorizontalExample> createState() => _HorizontalExampleState();
 }
-
-
 
 class _HorizontalExampleState extends State<HorizontalExample> {
   late List<bool> _isOverlayVisible;
@@ -44,7 +38,11 @@ class _HorizontalExampleState extends State<HorizontalExample> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SelectableText('ScrollableTitledImageCards WITHOUT overlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards WITHOUT overlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- no overlay
               ScrollableTitledImageCards(
                 scrollDirection: Axis.horizontal,
@@ -56,7 +54,11 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 },
               ),
 
-              const SelectableText('ScrollableTitledImageCards with TitleOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards with TitleOverlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- black overlay with title text in white
               ScrollableTitledImageCards(
                 scrollDirection: Axis.horizontal,
@@ -68,7 +70,7 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 },
                 overlays: [
                   for (var title in titlesList)
-                  // this will be a stack element on top of the image - customize however you want
+                    // this will be a stack element on top of the image - customize however you want
                     TitleOverlay(
                       title: title,
                       overlayColorHex: 0xFFF2D43F,
@@ -76,7 +78,11 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 ],
               ),
 
-              const SelectableText('ScrollableTitledImageCards with TitleDescriptionOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards with TitleDescriptionOverlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- variable colored overlay, title, and description -- MainAxisAlignment.end (default)
               ScrollableTitledImageCards(
                 scrollDirection: Axis.horizontal,
@@ -88,7 +94,7 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 },
                 overlays: [
                   for (int i = 0; i < titlesList.length; i++)
-                  // this will be a stack element on top of the image - customize however you want
+                    // this will be a stack element on top of the image - customize however you want
                     TitleDescriptionOverlay(
                       title: titlesList[i],
                       description: descriptionsList[i],
@@ -99,7 +105,11 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 ],
               ),
 
-              const SelectableText('ScrollableTitledImageCards with TitleSubtitleOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards with TitleSubtitleOverlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- variable colored overlay, title, and subtitle -- MainAxisAlignment.end (default)
               ScrollableTitledImageCards(
                 scrollDirection: Axis.horizontal,
@@ -111,7 +121,7 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 },
                 overlays: [
                   for (int i = 0; i < titlesList.length; i++)
-                  // this will be a stack element on top of the image - customize however you want
+                    // this will be a stack element on top of the image - customize however you want
                     TitleSubtitleOverlay(
                       title: titlesList[i],
                       subtitle: subtitlesList[i],
@@ -121,7 +131,11 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 ],
               ),
 
-              const SelectableText('ScrollableTitledImageCards with DescriptionOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards with DescriptionOverlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- variable colored overlay and description text-- MainAxisAlignment.end (default)
               ScrollableTitledImageCards(
                 scrollDirection: Axis.horizontal,
@@ -133,7 +147,7 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 },
                 overlays: [
                   for (int i = 0; i < descriptionsList.length; i++)
-                  // this will be a stack element on top of the image - customize however you want
+                    // this will be a stack element on top of the image - customize however you want
                     DescriptionOverlay(
                       description: descriptionsList[i],
                       textColorHex: 0xFFFFFFFF,
@@ -142,14 +156,18 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 ],
               ),
 
-              const SelectableText('ScrollableTitledImageCards with ClickableDescriptionOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards with ClickableDescriptionOverlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- variable colored and appearing overlay and description text -- MainAxisAlignment.end (default)
               ScrollableTitledImageCards(
                 imagesList: imagesList,
                 scrollDirection: Axis.horizontal,
                 width: 250,
                 height: 350,
-                onTap: (index){
+                onTap: (index) {
                   setState(() {
                     _isOverlayVisible[index] = !_isOverlayVisible[index];
                   });
@@ -165,14 +183,18 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 ],
               ),
 
-              const SelectableText('ScrollableTitledImageCards with ClickableTitleDescriptionOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards with ClickableTitleDescriptionOverlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- variable colored and appearing overlay, title, and description -- MainAxisAlignment.end (default)
               ScrollableTitledImageCards(
                 imagesList: imagesList,
                 scrollDirection: Axis.horizontal,
                 width: 250,
                 height: 350,
-                onTap: (index){
+                onTap: (index) {
                   setState(() {
                     _isOverlayVisible[index] = !_isOverlayVisible[index];
                   });
@@ -190,14 +212,18 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 ],
               ),
 
-              const SelectableText('ScrollableTitledImageCards with ClickableTitleSubtitleOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards with ClickableTitleSubtitleOverlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- variable colored and appearing overlay, title, and subtitle -- MainAxisAlignment.end (default)
               ScrollableTitledImageCards(
                 imagesList: imagesList,
                 scrollDirection: Axis.horizontal,
                 width: 250,
                 height: 350,
-                onTap: (index){
+                onTap: (index) {
                   setState(() {
                     _isOverlayVisible[index] = !_isOverlayVisible[index];
                   });
@@ -215,14 +241,18 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                 ],
               ),
 
-              const SelectableText('ScrollableTitledImageCards with ClickableTitleSubtitleDescriptionOverlay', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              const SelectableText(
+                'ScrollableTitledImageCards with ClickableTitleSubtitleDescriptionOverlay',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
               // image card -- variable colored and appearing overlay, title, subtitle, and description -- MainAxisAlignment.end (default)
               ScrollableTitledImageCards(
                 imagesList: imagesList,
                 scrollDirection: Axis.horizontal,
                 width: 250,
                 height: 350,
-                onTap: (index){
+                onTap: (index) {
                   setState(() {
                     _isOverlayVisible[index] = !_isOverlayVisible[index];
                   });

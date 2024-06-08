@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:scrollable_titled_image_cards/scrollable_titled_image_cards.dart';
 
-
 void main() {
   const images = [
     'example/assets/images/colosseum.jpg',
@@ -11,7 +10,8 @@ void main() {
   ];
 
   group('ScrollableTitledImageCards widget tests', () {
-    testWidgets('Renders ScrollableTitledImageCards widget', (WidgetTester tester) async {
+    testWidgets('Renders ScrollableTitledImageCards widget',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: ScrollableTitledImageCards(

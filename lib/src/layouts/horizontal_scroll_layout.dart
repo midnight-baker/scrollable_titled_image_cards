@@ -31,7 +31,7 @@ class ScrollableTitledImageFlowDelegateHorizontal extends FlowDelegate {
 
     final viewportDimension = scrollable.position.viewportDimension;
     final scrollFraction =
-    (listItemOffset.dx / viewportDimension).clamp(0.0, 1.0);
+        (listItemOffset.dx / viewportDimension).clamp(0.0, 1.0);
 
     final horizontalAlignment = Alignment(scrollFraction * 2 - 1, 0.0);
 
@@ -39,12 +39,12 @@ class ScrollableTitledImageFlowDelegateHorizontal extends FlowDelegate {
         (imageKey.currentContext!.findRenderObject() as RenderBox).size;
     final listItemSize = context.size;
     final childRect =
-    horizontalAlignment.inscribe(bgSize, Offset.zero & listItemSize);
+        horizontalAlignment.inscribe(bgSize, Offset.zero & listItemSize);
 
     context.paintChild(
       0,
       transform:
-      Transform.translate(offset: Offset(childRect.left, 0.0)).transform,
+          Transform.translate(offset: Offset(childRect.left, 0.0)).transform,
     );
   }
 

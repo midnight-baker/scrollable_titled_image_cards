@@ -28,7 +28,7 @@ class ScrollableTitledImageCards extends StatelessWidget {
   Widget build(BuildContext context) {
     if (overlays != null) {
       assert(overlays?.length == imagesList.length,
-      'Number of overlays must be equal to the number of images');
+          'Number of overlays must be equal to the number of images');
     }
 
     return SingleChildScrollView(
